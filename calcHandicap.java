@@ -1,18 +1,23 @@
 import java.lang.*;
 
-public class calcHandicap {
+	
+
+class TestHandicap{
+
+	public static void main(String[] args) {
+		Double index = Double.parseDouble(args[0]);
+		Double slope = Double.parseDouble(args[1]);
+		int x = calcHandicap(index, slope);
+		System.out.println(x);
+    	}
 
 
-    public static void main(String[] args) {
-	Float index = Float.parseFloat(args[0]);
-	Float slope = Float.parseFloat(args[1]);
- 
-//	System.out.println("Value parsed :"+index);
-//	System.out.println("Value parsed :"+slope);
+// returns course handicap based on player index and course slope rating
 
- 
-	int coursehandycap = (int) Math.ceil((index * slope) / 113 );
-        
-       System.out.println(coursehandycap);
-    }
+	public static int calcHandicap(double index, double slope) {
+		int StandardSlopeRating = 113;
+		int coursehandicap = (int) Math.ceil((index * slope) / StandardSlopeRating );
+		return coursehandicap;
+	}
 }
+	
